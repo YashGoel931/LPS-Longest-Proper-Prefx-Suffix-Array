@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+class HelloWorld {
+    public static void main(String[] args) {
+      String str="abbabb";
+      int[] lps=new int[str.length()];
+      lps[0]=0;
+      for(int i=1 ; i<str.length() ; i++){
+       lps[i]=lpps(str.substring(0,i+1));
+      }
+     System.out.println(Arrays.toString(lps));
+    }
+   public static int lpps(String s){
+    int max=0;
+    for(int i=0 ; i<s.length()-1 ; i++){
+if(s.substring(0,i+1).equals(s.substring(s.length()-i-1, s.length()))){
+       max=Math.max(i+1, max);}
+    }
+    return max;
+   }
+}
